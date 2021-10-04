@@ -1,0 +1,83 @@
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-color: grey;
+$sec-color: salmon;
+$third-color: whitesmoke;
+
+@mixin flexCenter {
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin formInputButton {
+    background-color: $third-color;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+body {
+    color: $third-color;
+    background-color: $sec-color;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font: 0.5rem;
+    @include flexCenter();
+}
+
+form {
+    @include flexCenter();
+    color: $primary-color;
+    .calculator-input {
+        @include formInputButton();
+
+    }
+}
+
+.calculator-button {
+    @include formInputButton();
+    color: $sec-color;
+    background: $third-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+        background: $sec-color;
+        color: $third-color;
+    }
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-list{
+    min-width: 30%;
+    list-style: none;
+}
+
+.number {
+    margin: 0.5rem;
+    background: $third-color;
+    color: $primary-color;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
